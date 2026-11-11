@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+tool/便携版/
+tool/ProductReuseRate/
+data/
+backups/
+tool/package-*/
+tool/verify-*/
+*.sqlite3*
+*.xlsx
+*.xls
+*.zip
+*.7z
+*.exe

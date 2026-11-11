@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="app-token" content="__TOKEN__">
+  <title>物料复用率</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside aria-label="导航">
+    <div class="brand">
+      <img class="brand-logo" src="/byd-logo.svg" alt="比亚迪汽车">
+      <div>物料复用率<span class="version">V1.0.0</span></div>
+    </div>
+    <button class="nav active" id="home">总览</button>
+    <div class="side-title"><span>物料分类 <span id="categoryCount"></span></span><button id="addCategory" aria-label="新建分类" title="新建分类">＋</button></div>
+    <input id="categorySearch" type="search" placeholder="搜索分类" aria-label="搜索分类">
+    <nav id="categories" aria-label="物料分类"></nav>
+    <div class="aside-bottom">
+      <button class="nav" id="trash">回收站</button>
+      <button class="nav" id="manage">备份与迁移</button>
+    </div>
+  </aside>
+  <main>
+    <header><div><h1 id="title">总览</h1><p id="subtitle"></p></div></header>
+    <div id="notice" role="status"></div>
+    <section id="content"></section>
+  </main>
+  <div id="categoryMenu" class="category-menu" role="group" aria-label="分类操作" hidden>
+    <button type="button" data-category-action="add-child">新建小分类</button>
+    <button type="button" data-category-action="rename">重命名分类</button>
+    <button type="button" data-category-action="delete" class="danger">删除分类</button>
+  </div>
+  <dialog id="modal" aria-labelledby="modalTitle">
+    <div id="modalBody"></div>
+    <div class="modal-actions"><button id="closeModal">关闭</button><button id="confirmModal" class="primary">确认</button></div>
+  </dialog>
+  <input id="files" type="file" accept=".xlsx" multiple hidden>
+  <input id="migrationFile" type="file" accept=".zip" hidden>
+  <script src="/app.js"></script>
+</body>
+</html>
